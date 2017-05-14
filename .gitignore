@@ -1,0 +1,7 @@
+# Previous versions
+OldVersions
+
+# Lock file
+*.lck
+
+parts/OldVersions
