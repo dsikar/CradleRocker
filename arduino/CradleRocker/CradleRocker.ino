@@ -21,7 +21,8 @@ int iRockLeft = iLevel - 45;
 int iRockRight = iLevel + 45;
 // Cradle rocking speed, higher number == higher delay = slower speed;
 int iDelay = 15;
-
+// PWM pin
+int iServoPin = 9;
 
 
 // String to store commands received via serial monitor
@@ -31,7 +32,7 @@ String strWelcome = "*** Cradle Rocker v0.1 ***\nType a number:\n1 - Level/Chang
 
 void setup() 
 { 
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo.attach(iServoPin);  // attaches the servo on pin 9 to the servo object 
   Serial.begin(9600);
   printHelp();
   myservo.write(iLevel); 
@@ -44,15 +45,19 @@ void processMsg(String strMsg)
  
   // Could be a case statement
   if(strMsg == "1") {
+    Serial.print("1");  
     level();
   }
   if(strMsg == "2") {
+    Serial.print("2");      
     rock();
   }
   if(strMsg == "3") {
+    Serial.print("3");      
     drain();
   }  
   if(strMsg == "4") {
+    Serial.print("4");      
     printHelp();
   }    
 }
