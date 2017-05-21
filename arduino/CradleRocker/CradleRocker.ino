@@ -45,15 +45,15 @@ void processMsg(String strMsg)
  
   // Could be a case statement
   if(strMsg == "1") {
-    Serial.print("1");  
+    Serial.print("1 - Level/Change flask\n");  
     level();
   }
   if(strMsg == "2") {
-    Serial.print("2");      
+    Serial.print("2 - Rock\n");      
     rock();
   }
   if(strMsg == "3") {
-    Serial.print("3");      
+    Serial.print("3 - Drain\n");      
     drain();
   }  
   if(strMsg == "4") {
